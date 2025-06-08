@@ -38,7 +38,10 @@ class RepositorioMemoria implements Repositorio {
     return emprestimos.containsKey(livro);
   }
   
-  public void emprestarLivro (Livro livro, Usuario usuario) {
+  public void emprestarLivro (Livro livro, Usuario usuario) throws ExcecaoLivroEmprestado {
+    if (livroEstaEmprestado(livro)) {
+      throw new ExcecaoLivroEmprestado();
+    }
     emprestimos.put(livro, usuario);
   }
   

@@ -57,6 +57,6 @@ public class Biblioteca {
   }
 
   public List<Livro> livrosEmprestadosUsuario(Usuario usuario) {
-    return repo.livrosEmprestadosUsuario(null);
+    return repo.livrosEmprestadosUsuario(usuario);
   }
 }
